@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+#this is best tha ol way
 
 from django.db import models
 
