@@ -11,7 +11,7 @@ def index(request):
     photos = PhotoGalerie.objects.filter(actif=True).order_by('ordre', '-date_ajout')
     for t in testimonials:
         t.range = range(t.note)
-    return render(request, 'index.html', {
+    return render(request, 'index2.html', {
         'services': services,
         'projects': projects,
         'temoignages' : temoignages ,
