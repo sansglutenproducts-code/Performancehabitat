@@ -7,165 +7,43 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance Habitat - Rénovation & Amélioration Énergétique | Finistère</title>
-    <meta name="description" content="Performance Habitat, artisan expert en rénovation, salle de bain clé en main et amélioration énergétique dans le Finistère. Devis gratuit.">
+    <title>Performance Habitat - Ensemble, assurons votre confort</title>
 
     <style>
-        /* ===== VARIABLES ET RESET ===== */
-        :root {
-            --vert-principal: #c4ff0e;
-            --vert-secondaire: #a8e000;
-            --gris-fonce: #1a1f2e;
-            --gris-moyen: #2d3447;
-            --gris-clair: #8a94a6;
-            --blanc: #ffffff;
-            --noir: #0a0e17;
-            --degrade-principal: linear-gradient(135deg, var(--vert-principal) 0%, var(--vert-secondaire) 100%);
-            --ombre-portee: 0 8px 30px rgba(0,0,0,0.12);
-            --ombre-hover: 0 15px 40px rgba(196, 255, 14, 0.15);
-            --border-radius: 15px;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --vert-fluo: #c4ff0e;
+            --gris-fonce: #2c3e50;
+            --gris-clair: #95a5a6;
+            --blanc: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Arial', sans-serif;
             color: var(--blanc);
             background: var(--gris-fonce);
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* ===== TYPOGRAPHIE ===== */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        /* ===== HEADER AMÉLIORÉ ===== */
+        .header {
+            background: linear-gradient(135deg, var(--gris-fonce) 0%, #34495e 100%);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.8rem; }
-        h3 { font-size: 2rem; }
-        h4 { font-size: 1.5rem; }
-
-        p {
-            color: var(--gris-clair);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .text-vert { color: var(--vert-principal); }
-        .text-clair { color: var(--gris-clair); }
-        .text-blanc { color: var(--blanc); }
-
-        /* ===== LAYOUT ===== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-alt {
-            background: var(--gris-moyen);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--degrade-principal);
-            margin: 1.5rem auto;
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        /* ===== COMPOSANTS ===== */
-        .btn {
-            display: inline-block;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-principal {
-            background: var(--degrade-principal);
-            color: var(--noir);
-            box-shadow: var(--ombre-portee);
-        }
-
-        .btn-principal:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--ombre-hover);
-        }
-
-        .btn-secondaire {
-            background: transparent;
-            color: var(--vert-principal);
-            border: 2px solid var(--vert-principal);
-        }
-
-        .btn-secondaire:hover {
-            background: var(--vert-principal);
-            color: var(--noir);
-        }
-
-        .card {
-            background: var(--gris-moyen);
-            border-radius: var(--border-radius);
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(196, 255, 14, 0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--ombre-hover);
-        }
-
-        /* ===== HEADER ===== */
-        .header {
-            background: rgba(26, 31, 46, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(196, 255, 14, 0.1);
         }
 
         .header-content {
@@ -173,91 +51,126 @@
             justify-content: space-between;
             align-items: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
+        /* Logo optimisé */
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            text-decoration: none;
+            gap: 1.2rem;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .logo-ph {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
         }
 
         .logo-img {
-            height: 70px;
+            height: 110px;
             width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover .logo-img {
-            transform: scale(1.05);
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
         }
 
         .logo-text {
-            display: flex;
-            flex-direction: column;
+            text-align: left;
         }
 
         .logo-title {
-            font-size: 1.4rem;
-            font-weight: 800;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
             color: var(--blanc);
-            line-height: 1.2;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .logo-title span {
+            color: var(--vert-fluo);
         }
 
         .logo-subtitle {
-            font-size: 0.8rem;
-            color: var(--vert-principal);
-            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--gris-clair);
+            line-height: 1.3;
+            font-weight: 500;
         }
 
+        /* Slogan breton repositionné */
+        .header-slogan {
+            color: #0e0c0c;
+            background: linear-gradient(135deg, var(--vert-fluo) 0%, #d4ff3e 100%);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 1rem 1.8rem;
+            text-align: center;
+            border-radius: 10px;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(196, 255, 14, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .header-slogan:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 255, 14, 0.5);
+        }
+
+        /* Navigation */
         .nav-menu {
             display: flex;
-            gap: 2rem;
+            gap: 1.8rem;
             list-style: none;
             align-items: center;
+            flex-wrap: wrap;
         }
 
-        .nav-link {
+        .nav-menu a {
             color: var(--blanc);
             text-decoration: none;
             font-weight: 600;
+            transition: all 0.3s;
             font-size: 0.95rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
+            white-space: nowrap;
             position: relative;
+            padding-bottom: 4px;
         }
 
-        .nav-link::after {
+        .nav-menu a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--vert-principal);
+            background: var(--vert-fluo);
             transition: width 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: var(--vert-principal);
+        .nav-menu a:hover {
+            color: var(--vert-fluo);
         }
 
-        .nav-link:hover::after {
+        .nav-menu a:hover::after {
             width: 100%;
         }
 
         .nav-instagram {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            color: var(--blanc) !important;
-            font-weight: 700;
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 10px;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(188, 24, 136, 0.3);
         }
 
         .nav-instagram:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(220, 39, 67, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(188, 24, 136, 0.5);
         }
 
         .nav-instagram::after {
@@ -266,118 +179,303 @@
 
         .menu-toggle {
             display: none;
-            background: var(--vert-principal);
-            color: var(--noir);
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
             border: none;
-            padding: 0.8rem;
-            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            font-size: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
-        /* ===== HERO ===== */
+        .menu-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== HERO SLIDER ===== */
         .hero {
-            background: linear-gradient(135deg, var(--gris-fonce) 0%, var(--noir) 100%);
-            padding: 12rem 0 8rem;
             position: relative;
+            height: 600px;
             overflow: hidden;
         }
 
-        .hero::before {
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            background: linear-gradient(135deg, #1a252f 0%, var(--gris-fonce) 100%);
+        }
+
+        .slider-item.active {
+            opacity: 1;
+        }
+
+        .slider-item::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background:
-                radial-gradient(circle at 20% 80%, rgba(196, 255, 14, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(196, 255, 14, 0.05) 0%, transparent 50%);
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .slider-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            position: relative;
-            z-index: 2;
+            z-index: 10;
+            width: 90%;
+            max-width: 1000px;
+            animation: slideInContent 0.8s ease-out forwards;
         }
 
-        .hero-title {
+        @keyframes slideInContent {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .hero h1 {
             font-size: 4rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--blanc) 0%, var(--vert-principal) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--blanc);
+            font-weight: 900;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            line-height: 1.2;
+            letter-spacing: 0.05rem;
         }
 
-        .hero-subtitle {
+        .hero h1 span {
+            color: var(--vert-fluo);
+            display: block;
+            font-size: 4.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero p {
             font-size: 1.5rem;
             color: var(--gris-clair);
             margin-bottom: 3rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            box-shadow: 0 10px 30px rgba(196, 255, 14, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196, 255, 14, 0.5);
+            background: #d4ff3e;
+        }
+
+        /* Contrôles du slider */
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slider-dot.active {
+            background: var(--vert-fluo);
+            width: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(196, 255, 14, 0.6);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(196, 255, 14, 0.2);
+            border: 2px solid var(--vert-fluo);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--vert-fluo);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 15;
+        }
+
+        .slider-arrow:hover {
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-prev {
+            left: 30px;
+        }
+
+        .slider-next {
+            right: 30px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-alt {
+            background: linear-gradient(135deg, #1a252f 0%, var(--gris-fonce) 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--blanc);
+        }
+
+        .section-title span {
+            color: var(--vert-fluo);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gris-clair);
+            margin-bottom: 4rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .hero-cta {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* ===== ABOUT ===== */
+        /* About section */
         .about-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .stats-grid {
-            display: grid;
-            gap: 1.5rem;
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--vert-fluo);
+            margin-bottom: 1.5rem;
         }
 
-        .stat-item {
-            text-align: center;
+        .about-text p {
+            color: var(--gris-clair);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: #34495e;
             padding: 2rem;
-            background: var(--gris-moyen);
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--vert-principal);
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid var(--vert-fluo);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(196, 255, 14, 0.2);
         }
 
         .stat-number {
             font-size: 3rem;
             font-weight: 900;
+            color: var(--vert-fluo);
             margin-bottom: 0.5rem;
         }
 
-        /* ===== SERVICES ===== */
+        .stat-label {
+            color: var(--gris-clair);
+            font-size: 1rem;
+        }
+
+        /* Services */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
         }
 
         .service-card {
-            background: var(--gris-moyen);
-            border-radius: 20px;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
             padding: 0;
-            overflow: hidden;
+            border-radius: 15px;
+            border-left: 5px solid var(--vert-fluo);
             transition: all 0.3s ease;
-            border: 1px solid rgba(196, 255, 14, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--ombre-hover);
-            border-color: var(--vert-principal);
+            box-shadow: 0 15px 40px rgba(196, 255, 14, 0.2);
         }
 
         .service-image {
+            width: 100%;
             height: 220px;
             overflow: hidden;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
         }
 
         .service-img {
@@ -388,54 +486,175 @@
         }
 
         .service-card:hover .service-img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
-        .service-content {
-            padding: 2.5rem;
+        .service-card-content {
+            padding: 2rem;
         }
 
-        .service-title {
-            color: var(--vert-principal);
+        .service-card h3 {
             font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--vert-fluo);
+        }
+
+        .service-card p {
+            color: var(--gris-clair);
+            line-height: 1.6;
             margin-bottom: 1rem;
         }
 
-        .service-features {
+        .service-card ul {
+            margin-top: 1rem;
             list-style: none;
-            margin-top: 1.5rem;
         }
 
-        .service-features li {
-            padding: 0.5rem 0;
-            padding-left: 1.8rem;
-            position: relative;
+        .service-card li {
             color: var(--gris-clair);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
         }
 
-        .service-features li::before {
+        .service-card li::before {
             content: '✓';
-            color: var(--vert-principal);
+            color: var(--vert-fluo);
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Réalisations */
+        .realisation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .realisation-card {
+            background: #34495e;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .realisation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(196, 255, 14, 0.2);
+        }
+
+        .realisation-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #2c3e50;
+        }
+
+        .realisation-content {
+            padding: 2rem;
+        }
+
+        .realisation-content h3 {
+            color: var(--vert-fluo);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .realisation-content p {
+            color: var(--gris-clair);
+            line-height: 1.6;
+        }
+
+        /* Témoignages */
+        .temoignage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .temoignage-card {
+            background: #34495e;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .temoignage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(196, 255, 14, 0.15);
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--vert-fluo);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .temoignage-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .temoignage-text {
+            color: var(--gris-clair);
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .temoignage-author {
+            color: var(--vert-fluo);
+            font-weight: 700;
             font-size: 1.1rem;
         }
 
-        /* ===== POMPE À CHALEUR ===== */
-        .pompe-chaleur {
-            background: linear-gradient(135deg, var(--noir) 0%, var(--gris-fonce) 100%);
+        .temoignage-rating {
+            color: var(--vert-fluo);
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
         }
 
-        .pompe-content {
+        /* Pompe à chaleur */
+        .pompe-chaleur-section {
+            background: linear-gradient(135deg, #1a252f 0%, var(--gris-fonce) 100%);
+            padding: 5rem 0;
+        }
+
+        .pompe-chaleur-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
+        .pompe-chaleur-text h3 {
+            font-size: 2.5rem;
+            color: var(--vert-fluo);
+            margin-bottom: 1.5rem;
+        }
+
+        .pompe-chaleur-text p {
+            color: var(--gris-clair);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
         .aides-list {
             margin-top: 2rem;
+        }
+
+        .aides-list h4 {
+            color: var(--vert-fluo);
+            margin-bottom: 1rem;
         }
 
         .aides-list ul {
@@ -443,82 +662,122 @@
         }
 
         .aides-list li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
             color: var(--gris-clair);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
         }
 
         .aides-list li::before {
             content: '✓';
-            color: var(--vert-principal);
+            color: var(--vert-fluo);
             position: absolute;
             left: 0;
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
-        /* ===== RÉALISATIONS ===== */
-        .realisation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2.5rem;
+        /* Zone d'intervention */
+        .zone-content {
+            text-align: center;
         }
 
-        .realisation-card {
-            background: var(--gris-moyen);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+        .zone-content p {
+            font-size: 1.3rem;
+            color: var(--gris-clair);
+            line-height: 2;
+            max-width: 900px;
+            margin: 0 auto 3rem;
         }
 
-        .realisation-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--ombre-hover);
-        }
-
-        .realisation-image {
-            height: 260px;
-            overflow: hidden;
-        }
-
-        .projects-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .realisation-card:hover .projects-img {
-            transform: scale(1.1);
-        }
-
-        .realisation-content {
-            padding: 2rem;
-        }
-
-        .realisation-title {
-            color: var(--vert-principal);
-            margin-bottom: 1rem;
-        }
-
-        .realisation-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
-
-        .photo-count {
-            background: var(--vert-principal);
-            color: var(--noir);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .zone-highlight {
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
+            padding: 3rem;
+            border-radius: 15px;
+            font-size: 1.5rem;
             font-weight: 700;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        /* ===== GALERIE ===== */
+        /* Contact */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: #34495e;
+            padding: 3rem;
+            border-radius: 15px;
+        }
+
+        .contact-info h3 {
+            color: var(--vert-fluo);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--gris-clair);
+            font-size: 1.05rem;
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: var(--vert-fluo);
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: #34495e;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--vert-fluo);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gris-clair);
+            border-radius: 8px;
+            background: var(--gris-fonce);
+            color: var(--blanc);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--vert-fluo);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* ===== GALERIE STYLES ===== */
         .gallery-filters {
             display: flex;
             justify-content: center;
@@ -528,20 +787,29 @@
         }
 
         .filter-btn {
-            background: var(--gris-moyen);
+            background: #34495e;
             color: var(--blanc);
             border: 2px solid transparent;
-            padding: 0.8rem 1.8rem;
+            padding: 0.8rem 2rem;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
         }
 
-        .filter-btn.active,
         .filter-btn:hover {
-            background: var(--vert-principal);
-            color: var(--noir);
+            border-color: var(--vert-fluo);
+            color: var(--vert-fluo);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
+            border-color: var(--vert-fluo);
         }
 
         .gallery-grid {
@@ -551,20 +819,34 @@
         }
 
         .gallery-item {
-            border-radius: 15px;
-            overflow: hidden;
+            opacity: 1;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .gallery-image-wrapper {
             position: relative;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
             cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         .gallery-img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
 
-        .gallery-item:hover .gallery-img {
+        .gallery-image-wrapper:hover .gallery-img {
             transform: scale(1.1);
         }
 
@@ -574,161 +856,166 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to top, rgba(10, 14, 23, 0.9) 0%, transparent 100%);
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 1.5rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .gallery-item:hover .gallery-overlay {
+        .gallery-image-wrapper:hover .gallery-overlay {
             opacity: 1;
         }
 
-        /* ===== TÉMOIGNAGES ===== */
-        .temoignage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+        .gallery-info h4 {
+            color: var(--vert-fluo);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .temoignage-card {
-            background: var(--gris-moyen);
-            padding: 2.5rem;
+        .gallery-info p {
+            color: var(--blanc);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-category {
+            display: inline-block;
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            position: relative;
-            border: 1px solid rgba(196, 255, 14, 0.1);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
-        .temoignage-card::before {
-            content: '"';
-            font-size: 6rem;
-            color: var(--vert-principal);
-            opacity: 0.2;
+        .gallery-zoom {
             position: absolute;
             top: 1rem;
-            left: 1.5rem;
-            line-height: 1;
-        }
-
-        .temoignage-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .temoignage-author {
-            color: var(--vert-principal);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .temoignage-rating {
-            color: var(--vert-principal);
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        /* ===== ZONE INTERVENTION ===== */
-        .zone-content {
-            text-align: center;
-        }
-
-        .zone-highlight {
-            background: var(--vert-principal);
-            color: var(--noir);
-            padding: 3rem;
-            border-radius: var(--border-radius);
+            right: 1rem;
+            background: var(--vert-fluo);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
             font-size: 1.5rem;
-            font-weight: 700;
-            margin: 2rem auto;
-            max-width: 900px;
-        }
-
-        /* ===== CONTACT ===== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            background: var(--gris-moyen);
-            padding: 3rem;
-            border-radius: 20px;
-            height: fit-content;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--vert-principal);
-            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: var(--noir);
-            flex-shrink: 0;
         }
 
-        .contact-form {
-            background: var(--gris-moyen);
-            padding: 3rem;
-            border-radius: 20px;
+        .gallery-zoom:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(196, 255, 14, 0.5);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--vert-principal);
-            font-weight: 600;
-        }
-
-        .form-control {
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
             width: 100%;
-            padding: 1rem;
-            background: var(--gris-fonce);
-            border: 2px solid rgba(196, 255, 14, 0.2);
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
             border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: var(--vert-fluo);
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--vert-fluo);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 1rem;
+            background: rgba(44, 62, 80, 0.8);
+            border-radius: 50%;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
+        }
+
+        .lightbox-prev {
+            left: 30px;
+        }
+
+        .lightbox-next {
+            right: 30px;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             color: var(--blanc);
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
+            background: rgba(0,0,0,0.7);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            max-width: 80%;
+            text-align: center;
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--vert-principal);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* ===== INSTAGRAM ===== */
+        /* ===== INSTAGRAM SECTION ===== */
         .instagram-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--gris-moyen);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
             padding: 2.5rem;
-            border-radius: var(--border-radius);
+            border-radius: 15px;
             margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             flex-wrap: wrap;
             gap: 2rem;
         }
@@ -745,7 +1032,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            border: 3px solid var(--vert-principal);
+            border: 3px solid var(--vert-fluo);
             padding: 3px;
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             overflow: hidden;
@@ -757,6 +1044,43 @@
             border-radius: 50%;
             object-fit: cover;
             background: white;
+        }
+
+        .instagram-info h3 {
+            color: var(--vert-fluo);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .instagram-info p {
+            color: var(--gris-clair);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .instagram-follow-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(188, 24, 136, 0.4);
+            white-space: nowrap;
+        }
+
+        .instagram-follow-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(188, 24, 136, 0.6);
+        }
+
+        .insta-icon {
+            font-size: 1.5rem;
         }
 
         .instagram-grid {
@@ -773,174 +1097,221 @@
             overflow: hidden;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         .instagram-post:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(196, 255, 14, 0.2);
         }
 
         .instagram-post img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        /* ===== FOOTER ===== */
+        .instagram-post:hover img {
+            transform: scale(1.05);
+        }
+
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .instagram-post:hover .instagram-overlay {
+            opacity: 1;
+        }
+
+        .instagram-stats {
+            display: flex;
+            gap: 2rem;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .instagram-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .instagram-cta {
+            text-align: center;
+        }
+
+        /* Bouton flottant Instagram */
+        .floating-instagram {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 25px rgba(188, 24, 136, 0.5);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: pulse-insta 2s infinite;
+        }
+
+        @keyframes pulse-insta {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(188, 24, 136, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 35px rgba(188, 24, 136, 0.7);
+            }
+        }
+
+        .floating-instagram:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Footer */
         .footer {
-            background: var(--noir);
-            padding: 4rem 0 2rem;
+            background: #1a252f;
+            padding: 3rem 0 1rem;
         }
 
         .footer-banner {
-            background: var(--vert-principal);
-            color: var(--noir);
-            padding: 2.5rem;
+            background: var(--vert-fluo);
+            color: var(--gris-fonce);
+            padding: 2rem;
             font-size: 1.8rem;
             font-weight: 700;
-            text-align: center;
-            border-radius: var(--border-radius);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
             margin-bottom: 3rem;
+            text-align: center;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .footer-section h4 {
-            color: var(--vert-principal);
-            margin-bottom: 1.5rem;
+            color: var(--vert-fluo);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
-        .footer-links a {
-            display: block;
+        .footer-section p,
+        .footer-section a {
             color: var(--gris-clair);
+            line-height: 1.8;
             text-decoration: none;
-            margin-bottom: 0.8rem;
-            transition: color 0.3s ease;
+            display: block;
         }
 
-        .footer-links a:hover {
-            color: var(--vert-principal);
+        .footer-section a:hover {
+            color: var(--vert-fluo);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid var(--gris-moyen);
+            border-top: 1px solid var(--gris-clair);
             color: var(--gris-clair);
         }
 
-        /* ===== BOUTONS FLOTTANTS ===== */
-        .floating-cta {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--degrade-principal);
-            color: var(--noir);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            box-shadow: var(--ombre-portee);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .floating-cta:hover {
-            transform: scale(1.1);
-            box-shadow: var(--ombre-hover);
-        }
-
-        .floating-instagram {
-            position: fixed;
-            bottom: 8rem;
-            right: 2rem;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: var(--blanc);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(188, 24, 136, 0.5);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .floating-instagram:hover {
-            transform: scale(1.1);
-        }
-
-        /* ===== LIGHTBOX ===== */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.95);
-            animation: fadeIn 0.3s;
-        }
-
-        .lightbox.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: var(--vert-principal);
-            font-size: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 10000;
-        }
-
-        .lightbox-close:hover {
-            transform: scale(1.2);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .header-content {
+                gap: 1.5rem;
+            }
+
+            .header-slogan {
+                order: 3;
+                width: 100%;
+                font-size: 0.85rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .nav-menu {
+                order: 4;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 968px) {
+            .hero {
+                height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 span {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .slider-prev {
+                left: 15px;
+            }
+
+            .slider-next {
+                right: 15px;
+            }
+
+            .logo-img {
+                height: 90px;
+            }
+
+            .logo-title {
+                font-size: 1.4rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.75rem;
+            }
+
             .nav-menu {
                 display: none;
+                flex-direction: column;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
                 background: var(--gris-fonce);
                 padding: 2rem;
-                flex-direction: column;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
                 gap: 1rem;
-                border-top: 1px solid var(--gris-moyen);
             }
 
             .nav-menu.active {
@@ -951,108 +1322,117 @@
                 display: block;
             }
 
-            .hero-title {
-                font-size: 3rem;
-            }
-
             .about-content,
-            .pompe-content,
-            .contact-grid {
+            .pompe-chaleur-content,
+            .contact-wrapper {
                 grid-template-columns: 1fr;
-            }
-
-            .instagram-header {
-                flex-direction: column;
-                text-align: center;
+                gap: 2rem;
             }
         }
 
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
+        @media (max-width: 600px) {
+            .hero {
+                height: 400px;
             }
 
-            .hero-subtitle {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero h1 span {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .slider-controls {
+                bottom: 15px;
+                gap: 8px;
+            }
+
+            .slider-dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .slider-dot.active {
+                width: 30px;
+            }
+
+            .logo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+                min-width: auto;
+            }
+
+            .logo-img {
+                height: 70px;
+            }
+
+            .logo-title {
                 font-size: 1.2rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.7rem;
             }
 
             .services-grid,
             .realisation-grid,
-            .temoignage-grid {
+            .temoignage-grid,
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
 
-            .section {
-                padding: 3rem 0;
+            .section-title {
+                font-size: 2rem;
             }
 
             .zone-highlight {
                 font-size: 1.2rem;
                 padding: 2rem;
             }
-
-            .footer-banner {
-                font-size: 1.4rem;
-                padding: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .gallery-filters {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .filter-btn {
-                width: 100%;
-                max-width: 250px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="#accueil" class="logo">
-                    <img src="{% static 'img/logo.png' %}" alt="Performance Habitat - Expert en rénovation" class="logo-img">
-                    <div class="logo-text">
-                        <div class="logo-title">PERFORMANCE HABITAT</div>
-                        <div class="logo-subtitle">NEUF & RÉNOVATION</div>
+                <div class="logo">
+                    <div class="logo-ph">
+                        <img src="{% static 'img/logo.png' %}" alt="Performance Habitat Logo" class="logo-img">
                     </div>
-                </a>
+                    <div class="logo-text">
+                        <div class="logo-title">Performance <span>Habitat</span></div>
+                        <div class="logo-subtitle">NEUF & RÉNOVATION - Ensemble, assurons votre confort</div>
+                    </div>
+                </div>
 
-                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu navigation">☰</button>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+                <div class="header-slogan">SUBLIMONS ET RÉNOVONS VOTRE HABITAT</div>
 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
-                    <li><a href="#apropos" class="nav-link">À propos</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#pompe-chaleur" class="nav-link">PAC</a></li>
-                    <li><a href="#realisations" class="nav-link">Réalisations</a></li>
-                    <li><a href="#temoignages" class="nav-link">Avis</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pompe-chaleur">Pompe à chaleur</a></li>
+                    <li><a href="#realisations">Réalisations</a></li>
+                    <li><a href="#gallerie">Galerie</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                    <li><a href="#zone">Zone</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li>
-                        <a href="https://www.instagram.com/performancehabitat29/" class="nav-link nav-instagram" target="_blank" rel="noopener">
+                        <a href="https://www.instagram.com/performancehabitat29/" target="_blank" rel="noopener noreferrer" title="Instagram — Performance Habitat" class="nav-instagram">
                             Instagram
                         </a>
                     </li>
@@ -1061,58 +1441,71 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO SLIDER ===== -->
     <section id="accueil" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Rénovation & Performance Énergétique</h1>
-                <p class="hero-subtitle">Artisan expert en salle de bain clé en main, rénovation complète et amélioration de l'habitat dans le Finistère</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-principal">Devis Gratuit</a>
-                    <a href="#realisations" class="btn btn-secondaire">Voir nos réalisations</a>
-                </div>
+        <div class="slider-container">
+            <div class="slider-item active">
+                <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=600&fit=crop" alt="Projet 1">
             </div>
+            <div class="slider-item">
+                <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1200&h=600&fit=crop" alt="Projet 2">
+            </div>
+            <div class="slider-item">
+                <img src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=1200&h=600&fit=crop" alt="Projet 3">
+            </div>
+            <div class="slider-item">
+                <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1200&h=600&fit=crop" alt="Projet 4">
+            </div>
+
+            <!-- Contenu du héro -->
+            <div class="hero-content">
+                <h1>L'interlocuteur <span>unique pour tous vos travaux</span></h1>
+                <p>Plomberie - Chauffage - Électricité - Carrelage & Sols - Cloisons Sèches - Peinture</p>
+                <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Demander un devis gratuit</button>
+            </div>
+
+            <!-- Contrôles -->
+            <div class="slider-controls" id="sliderControls"></div>
+            <div class="slider-arrow slider-prev" onclick="prevSlide()">❮</div>
+            <div class="slider-arrow slider-next" onclick="nextSlide()">❯</div>
         </div>
     </section>
 
-    <!-- À propos -->
     <section id="apropos" class="section">
         <div class="container">
-            <h2 class="section-title">À propos de <span class="text-vert">Performance Habitat</span></h2>
-            <p class="section-subtitle">Votre artisan de confiance pour la rénovation et l'amélioration énergétique dans le Finistère</p>
+            <h2 class="section-title">À propos de <span>Performance Habitat</span></h2>
+            <p class="section-subtitle">Votre artisan spécialiste en rénovation et amélioration énergétique</p>
 
             <div class="about-content">
                 <div class="about-text">
-                    <h3 class="text-blanc">15 ans d'expertise au service de votre confort</h3>
-                    <p>Performance Habitat transforme votre habitat avec expertise et passion. Forts de 15 années d'expérience, nous conjuguons savoir-faire artisanal et solutions innovantes pour vos projets de rénovation.</p>
-                    <p>De la salle de bain clé en main à l'installation de pompes à chaleur, en passant par tous vos travaux de plomberie, électricité et aménagement, nous garantissons un accompagnement personnalisé et des finitions de qualité.</p>
-                    <p>Notre engagement : respect des délais, transparence des devis, et satisfaction client totale.</p>
+                    <h3>Votre expert en rénovation</h3>
+                    <p>Performance Habitat est votre partenaire privilégié pour tous vos projets de rénovation et d'amélioration de l'habitat dans la région brestoise. Notre entreprise allie expertise technique et savoir-faire artisanal pour transformer vos espaces de vie.</p>
+                    <p>Nous intervenons pour des projets de toutes envergures : de la simple réparation à la rénovation complète, en mettant l'accent sur la qualité des finitions et le respect de votre budget.</p>
+                    <p>Notre équipe met son savoir-faire à votre disposition pour vous garantir des travaux de qualité, dans le respect des délais et avec un suivi personnalisé de votre projet.</p>
                 </div>
 
                 <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number text-vert">15+</div>
-                        <div class="stat-label text-clair">Années d'expérience</div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Années d'expérience</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number text-vert">500+</div>
-                        <div class="stat-label text-clair">Projets réalisés</div>
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projets réalisés</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number text-vert">100%</div>
-                        <div class="stat-label text-clair">Clients satisfaits</div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Clients satisfaits</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
     <section id="services" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Nos <span class="text-vert">Services</span></h2>
-            <p class="section-subtitle">Des solutions complètes pour tous vos projets de rénovation et d'amélioration</p>
-
+            <h2 class="section-title">Nos <span>Services</span></h2>
+            <p class="section-subtitle">Des solutions complètes pour tous vos projets de rénovation</p>
             <div class="services-grid">
                 {% for service in services %}
                 <div class="service-card">
@@ -1121,12 +1514,11 @@
                         <img src="{{ service.image.url }}" alt="{{ service.titre }}" class="service-img">
                     </div>
                     {% endif %}
-                    <div class="service-content">
-                        <h3 class="service-title">{{ service.titre }}</h3>
-                        <p class="text-clair">{{ service.description }}</p>
-
+                    <div class="service-card-content">
+                        <h3>{{ service.titre }}</h3>
+                        <p>{{ service.description }}</p>
                         {% if service.details.all %}
-                        <ul class="service-features">
+                        <ul>
                             {% for detail in service.details.all %}
                             <li>{{ detail.texte }}</li>
                             {% endfor %}
@@ -1135,59 +1527,49 @@
                     </div>
                 </div>
                 {% empty %}
-                <div style="grid-column: 1/-1; text-align: center;">
-                    <p class="text-clair">Nos services seront bientôt disponibles.</p>
-                </div>
+                <p style="color: var(--gris-clair); text-align: center; grid-column: 1/-1;">Nos services seront bientôt disponibles.</p>
                 {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Pompe à chaleur -->
-    <section id="pompe-chaleur" class="section pompe-chaleur">
+    <section id="pompe-chaleur" class="pompe-chaleur-section">
         <div class="container">
-            <h2 class="section-title">Pompe à <span class="text-vert">Chaleur</span></h2>
-            <p class="section-subtitle">Divisez vos factures de chauffage jusqu'à 70% avec une solution écologique et performante</p>
-
-            <div class="pompe-content">
-                <div class="pompe-text">
-                    <h3 class="text-blanc">Économisez grâce aux énergies renouvelables</h3>
-                    <p>Nous installons des pompes à chaleur performantes et adaptées à votre logement, vous permettant de réaliser d'importantes économies sur vos factures énergétiques.</p>
-                    <p>Notre expertise nous permet de vous proposer les solutions les plus adaptées à vos besoins et à votre budget.</p>
-
+            <div class="pompe-chaleur-content">
+                <div class="pompe-chaleur-text">
+                    <h3>POMPE À CHALEUR</h3>
+                    <p><strong>Divisez vos factures jusqu'à 70%</strong> en optant pour une solution de chauffage performante et économe en énergie.</p>
+                    <p>Nous vous accompagnons dans votre projet d'installation de pompe à chaleur : étude de faisabilité, choix du matériel, installation et mise en service, le tout dans le respect des normes en vigueur.</p>
                     <div class="aides-list">
-                        <h4 class="text-vert">Aides financières disponibles :</h4>
+                        <h4>Aides disponibles :</h4>
                         <ul>
-                            <li>MaPrimeRénov' (sous conditions de ressources)</li>
+                            <li>MaPrimeRénov' (sous conditions)</li>
                             <li>Prime CEE (Certificats d'Économies d'Énergie)</li>
                             <li>Éco-prêt à taux zéro</li>
                             <li>TVA réduite à 5,5%</li>
                             <li>Aides locales selon votre commune</li>
                         </ul>
                     </div>
-
-                    <a href="#contact" class="btn btn-principal" style="margin-top: 2rem;">Étude gratuite</a>
                 </div>
 
-                <div class="pompe-visuel">
-                    <div class="card">
-                        <div style="text-align: center; padding: 2rem;">
-                            <div style="font-size: 4rem; margin-bottom: 1rem;">🌡️</div>
-                            <h3 class="text-vert">Installation Professionnelle</h3>
-                            <p class="text-clair">Nous réalisons l'installation de pompes à chaleur avec rigueur et savoir-faire, en partenariat avec des fournisseurs certifiés. Votre confort et vos économies d'énergie sont notre priorité.</p>
-                        </div>
+               <div class="pompe-chaleur-image">
+                    <div style="background: #34495e; padding: 2rem; border-radius: 15px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🌡️</div>
+                        <h3 style="color: var(--vert-fluo); margin-bottom: 1rem;">Installation Professionnelle</h3>
+                        <p style="color: var(--gris-clair);">
+                            Nous réalisons l'installation de pompes à chaleur avec rigueur et savoir-faire, en partenariat avec des fournisseurs certifiés.
+                            Votre confort et vos économies d'énergie sont notre priorité.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Réalisations -->
-    <section id="realisations" class="section">
+     <section id="realisations" class="section">
         <div class="container">
-            <h2 class="section-title">Nos <span class="text-vert">Réalisations</span></h2>
+            <h2 class="section-title">Nos <span>Réalisations</span></h2>
             <p class="section-subtitle">Découvrez quelques-uns de nos projets récents dans la région brestoise</p>
-
             <div class="realisation-grid">
                 {% for projet in projects %}
                 <div class="realisation-card">
@@ -1197,39 +1579,38 @@
                     </div>
                     {% endif %}
                     <div class="realisation-content">
-                        <h3 class="realisation-title">{{ projet.titre }}</h3>
-                        <p class="text-clair">{{ projet.description|safe|truncatewords_html:25 }}</p>
+                        <h3>{{ projet.titre }}</h3>
+                        <p>{{ projet.description|safe|truncatewords_html:30 }}</p>
 
-                        <div class="realisation-meta">
-                            {% if projet.images.count > 0 %}
-                            <div class="photo-count">
-                                📷 {{ projet.images.count }} photo{{ projet.images.count|pluralize }}
-                            </div>
-                            {% endif %}
-                            <a href="{% url 'project_detail' projet.slug %}" class="btn btn-secondaire">
-                                Voir le projet
-                            </a>
+                        <!-- Badges pour les images supplémentaires -->
+                        {% if projet.images.count > 0 %}
+                        <div style="margin-top: 1rem; color: var(--vert-fluo); font-size: 0.9rem;">
+                            📷 {{ projet.images.count }} photo{{ projet.images.count|pluralize }}
                         </div>
+                        {% endif %}
+
+                        <!-- Bouton pour voir les détails -->
+                        <a href="{% url 'project_detail' projet.slug %}"
+                           style="display: inline-block; margin-top: 1rem; background: var(--vert-fluo); color: var(--gris-fonce); padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s ease;">
+                            Voir les détails →
+                        </a>
                     </div>
                 </div>
                 {% empty %}
-                <div style="grid-column: 1/-1; text-align: center;">
-                    <p class="text-clair">Nos réalisations seront bientôt disponibles.</p>
-                </div>
+                <p style="color: var(--gris-clair); text-align: center; grid-column: 1/-1;">Nos réalisations seront bientôt disponibles.</p>
                 {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Galerie -->
     <section id="gallerie" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Notre <span class="text-vert">Galerie</span></h2>
-            <p class="section-subtitle">Parcourez nos réalisations en images</p>
+            <h2 class="section-title">Notre <span>Galerie</span></h2>
+            <p class="section-subtitle">Parcourez nos projets en images</p>
 
             <!-- Filtres de galerie -->
             <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                <button class="filter-btn active" data-filter="all">Tous</button>
                 {% for cat in categories %}
                     <button class="filter-btn" data-filter="{{ cat.slug }}">{{ cat.nom }}</button>
                 {% endfor %}
@@ -1238,16 +1619,18 @@
             <div class="gallery-grid">
                 {% for photo in photos %}
                 <div class="gallery-item" data-category="{{ photo.categorie.slug }}">
-                    <img src="{{ photo.image.url }}" alt="{{ photo.titre }}" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4 class="text-blanc">{{ photo.titre }}</h4>
-                            {% if photo.description %}
-                                <p class="text-clair">{{ photo.description|truncatewords:15 }}</p>
-                            {% endif %}
-                            <span class="photo-count">{{ photo.categorie.nom }}</span>
+                    <div class="gallery-image-wrapper">
+                        <img src="{{ photo.image.url }}" alt="{{ photo.titre }}" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>{{ photo.titre }}</h4>
+                                {% if photo.description %}
+                                    <p>{{ photo.description|truncatewords:20 }}</p>
+                                {% endif %}
+                                <span class="gallery-category">{{ photo.categorie.nom }}</span>
+                            </div>
+                            <button class="gallery-zoom" onclick="openLightbox({{ forloop.counter0 }})">🔍</button>
                         </div>
-                        <button class="gallery-zoom" onclick="openLightbox({{ forloop.counter0 }})" aria-label="Agrandir l'image">🔍</button>
                     </div>
                 </div>
                 {% endfor %}
@@ -1255,43 +1638,42 @@
         </div>
     </section>
 
-    <!-- Lightbox -->
+    <!-- Lightbox pour agrandir les images -->
     <div id="lightbox" class="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Image agrandie">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-prev" onclick="changeLightbox(-1)">&#10094;</span>
+        <span class="lightbox-next" onclick="changeLightbox(1)">&#10095;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
-    <!-- Témoignages -->
-    <section id="temoignages" class="section">
+    <section id="temoignages" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Témoignages <span class="text-vert">Clients</span></h2>
-            <p class="section-subtitle">Ce que nos clients disent de leur expérience avec Performance Habitat</p>
-
+            <h2 class="section-title">Témoignages <span>Clients</span></h2>
+            <p class="section-subtitle">Ce que nos clients disent de nous</p>
             <div class="temoignage-grid">
                 {% for t in temoignages %}
                 <div class="temoignage-card">
-                    <p class="temoignage-text text-clair">"{{ t.texte }}"</p>
-                    <div class="temoignage-author">{{ t.nom }}{% if t.localisation %} - {{ t.localisation }}{% endif %}</div>
-                    <div class="temoignage-rating">
-                        {% for i in "★★★★★"|slice:":"|make_list %}
-                            {% if forloop.counter <= t.note %}★{% else %}☆{% endif %}
-                        {% endfor %}
+                    <div class="quote-icon">"</div>
+                    <div class="temoignage-content">
+                        <p class="temoignage-text">"{{ t.texte }}"</p>
+                        <div class="temoignage-author">{{ t.nom }}{% if t.localisation %} - {{ t.localisation }}{% endif %}</div>
+                        <div class="temoignage-rating">
+                            {% for i in "★★★★★"|slice:":"|make_list %}{% if forloop.counter <= t.note %}★{% endif %}{% endfor %}
+                        </div>
                     </div>
                 </div>
                 {% empty %}
-                <div style="grid-column: 1/-1; text-align: center;">
-                    <p class="text-clair">Les témoignages arrivent bientôt.</p>
-                </div>
+                <p style="color: var(--gris-clair); text-align: center; grid-column: 1/-1;">Les témoignages arrivent bientôt.</p>
                 {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Instagram -->
-    <section id="instagram" class="section section-alt">
+    <section id="instagram-feed" class="section">
         <div class="container">
-            <h2 class="section-title">Suivez-nous sur <span class="text-vert">Instagram</span></h2>
-            <p class="section-subtitle">Découvrez nos dernières réalisations et l'envers du décor</p>
+            <h2 class="section-title">Suivez-nous sur <span>Instagram</span></h2>
+            <p class="section-subtitle">Découvrez nos dernières réalisations et l'envers du décor de nos chantiers</p>
 
             <div class="instagram-header">
                 <div class="instagram-profile">
@@ -1299,110 +1681,155 @@
                         <img src="{% static 'img/logo.png' %}" alt="Performance Habitat">
                     </div>
                     <div class="instagram-info">
-                        <h3 class="text-blanc">@performancehabitat29</h3>
-                        <p class="text-clair">🏠 Rénovation & Amélioration Énergétique | 🔧 Artisan Breton | 📍 Finistère</p>
+                        <h3>@performancehabitat29</h3>
+                        <p>🏠 Rénovation & Amélioration Énergétique | 🔧 Artisan Breton </p>
                     </div>
                 </div>
-                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" rel="noopener" class="btn btn-principal">
-                    <span style="margin-right: 0.5rem;">📷</span>
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="instagram-follow-btn">
+                    <span class="insta-icon">📷</span>
                     Suivre sur Instagram
                 </a>
             </div>
 
+            <!-- Grille Instagram simulée -->
             <div class="instagram-grid">
-                <!-- Les posts Instagram seraient dynamiquement chargés ici -->
-                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" rel="noopener" class="instagram-post">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Réalisation salle de bain">
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600" alt="Réalisation Instagram">
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span>❤️ 45</span>
+                            <span>💬 3</span>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" rel="noopener" class="instagram-post">
-                    <img src="https://images.unsplash.com/photo-1540518614846-7eded1020b75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Projet rénovation">
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600" alt="Réalisation Instagram">
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span>❤️ 52</span>
+                            <span>💬 5</span>
+                        </div>
+                    </div>
                 </a>
-                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" rel="noopener" class="instagram-post">
-                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cuisine aménagée">
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600" alt="Réalisation Instagram">
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span>❤️ 38</span>
+                            <span>💬 2</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=600" alt="Réalisation Instagram">
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span>❤️ 61</span>
+                            <span>💬 7</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1565183928294-7d22f2d8d2b4?w=600" alt="Réalisation Instagram">
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span>❤️ 47</span>
+                            <span>💬 4</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="instagram-post">
+                    <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600" alt="Réalisation Instagram">
+                    <div class="instagram-overlay">
+                        <div class="instagram-stats">
+                            <span>❤️ 55</span>
+                            <span>💬 6</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="instagram-cta">
+                <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="cta-button">
+                    📷 Voir plus sur Instagram
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Zone d'intervention -->
     <section id="zone" class="section">
         <div class="container">
-            <h2 class="section-title">Notre <span class="text-vert">Zone d'Intervention</span></h2>
+            <h2 class="section-title">Notre <span>Zone d'Intervention</span></h2>
             <div class="zone-content">
-                <p class="text-clair" style="font-size: 1.3rem;">Nous intervenons principalement dans le Finistère et ses alentours :</p>
+                <p>Nous intervenons principalement dans le Finistère et ses alentours :</p>
                 <div class="zone-highlight">
                     BREST • GUILERS • PLOUZANÉ • LE RELECQ-KERHUON • BOHARS • GOUESNOU • PLABENNEC • LANNILIS • ET TOUTE LA RÉGION BRESTOISE
                 </div>
-                <p class="text-clair" style="margin-top: 2rem; font-size: 1.1rem;">N'hésitez pas à nous contacter pour vérifier notre intervention sur votre commune.</p>
+                <p style="margin-top: 2rem;">N'hésitez pas à nous contacter pour vérifier notre zone d'intervention sur votre commune.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Contactez-<span class="text-vert">nous</span></h2>
+            <h2 class="section-title">Contactez-<span>nous</span></h2>
             <p class="section-subtitle">Demandez votre devis gratuit et sans engagement</p>
 
-            <div class="contact-grid">
+            <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h3 class="text-blanc">Nos coordonnées</h3>
-
+                    <h3>Nos coordonnées</h3>
                     <div class="info-item">
                         <div class="info-icon">📞</div>
                         <div>
-                            <div class="text-blanc" style="font-weight: 700; font-size: 1.2rem;">06 50 03 47 77</div>
-                            <div class="text-clair">06 35 13 02 99</div>
+                            <div><strong>06 50 03 47 77</strong></div>
+                            <div>06 35 13 02 99</div>
                         </div>
                     </div>
-
                     <div class="info-item">
                         <div class="info-icon">✉️</div>
-                        <div class="text-clair">performancehabitat29@gmail.com</div>
+                        <div>performancehabitat29@gmail.com</div>
                     </div>
-
+                    <div class="info-item">
+                        <div class="info-icon">👤</div>
+                        <div>
+                            <div>Votre artisan expert</div>
+                        </div>
+                    </div>
                     <div class="info-item">
                         <div class="info-icon">🏢</div>
                         <div>
-                            <div class="text-clair">Lieu-dit Penfeld - 29820 GUILERS</div>
-                            <div class="text-clair">N° SIRET: 79376856500012</div>
+                            <div>Siège social : Lieu-dit Penfeld - 29820 GUILERS</div>
+                            <div>N° SIRET: 79376856500012</div>
+                            <div>Capital social : 12 500€</div>
                         </div>
                     </div>
-
                     <div class="info-item">
                         <div class="info-icon">🕒</div>
                         <div>
-                            <div class="text-clair">Lun-Ven: 8h00-18h00</div>
-                            <div class="text-clair">Sam: 9h00-12h00</div>
+                            <div>Lundi - Vendredi : 8h00 - 18h00</div>
+                            <div>Samedi : 9h00 - 12h00</div>
+                            <div>Dimanche : Fermé</div>
                         </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div class="text-clair">Intervention sur Brest et toute la région</div>
                     </div>
                 </div>
 
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label class="form-label">Nom et Prénom *</label>
-                            <input type="text" class="form-control" required>
+                            <label for="name">Nom et Prénom</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-
                         <div class="form-group">
-                            <label class="form-label">Email *</label>
-                            <input type="email" class="form-control" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-
                         <div class="form-group">
-                            <label class="form-label">Téléphone *</label>
-                            <input type="tel" class="form-control" required>
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
-
                         <div class="form-group">
-                            <label class="form-label">Service souhaité *</label>
-                            <select class="form-control" required>
+                            <label for="service">Service souhaité</label>
+                            <select id="service" name="service" required>
                                 <option value="">Sélectionnez un service</option>
                                 <option value="salle-de-bain">Salle de bain clé en main</option>
                                 <option value="electricite">Électricité générale</option>
@@ -1415,126 +1842,129 @@
                                 <option value="autre">Autre projet</option>
                             </select>
                         </div>
-
                         <div class="form-group">
-                            <label class="form-label">Description de votre projet *</label>
-                            <textarea class="form-control" rows="5" placeholder="Décrivez votre projet en détail (surface, travaux souhaités, délais...)
-
-
-
-                                                    <textarea class="form-control" rows="5" placeholder="Décrivez votre projet en détail (surface, travaux souhaités, délais, budget...)"></textarea>
+                            <label for="message">Description de votre projet</label>
+                            <textarea id="message" name="message" placeholder="Décrivez votre projet en détail..." required></textarea>
                         </div>
-
-                        <button type="submit" class="btn btn-principal" style="width: 100%;">
-                            📩 Envoyer ma demande de devis
-                        </button>
+                        <button type="submit" class="cta-button" style="width: 100%;">Envoyer ma demande de devis</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-banner">
-                PERFORMANCE HABITAT - VALORISEZ VOTRE PATRIMOINE IMMOBILIER
+                AVEC PERFORMANCE HABITAT, VALORISEZ VOTRE PATRIMOINE IMMOBILIER
             </div>
-
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Performance Habitat</h4>
-                    <p class="text-clair">Votre artisan local spécialiste en rénovation et amélioration énergétique dans le Finistère. Neuf & Rénovation.</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="https://www.instagram.com/performancehabitat29/" target="_blank" rel="noopener" class="text-clair" style="text-decoration: none;">📷 @performancehabitat29</a>
-                    </div>
+                    <p>Votre artisan local spécialiste en rénovation et amélioration énergétique dans le Finistère. Neuf & Rénovation.</p>
                 </div>
-
                 <div class="footer-section">
                     <h4>Nos services</h4>
-                    <div class="footer-links">
-                        <a href="#services">Salle de bain clé en main</a>
-                        <a href="#services">Plomberie</a>
-                        <a href="#services">Chauffage</a>
-                        <a href="#services">Électricité</a>
-                        <a href="#services">Pompes à chaleur</a>
-                        <a href="#services">Carrelage & sols</a>
-                        <a href="#services">Cloisons sèches</a>
-                        <a href="#services">Peinture</a>
-                    </div>
+                    <a href="#services">Salle de bain clé en main</a>
+                    <a href="#services">Plomberie</a>
+                    <a href="#services">Chauffage</a>
+                    <a href="#services">Électricité</a>
+                    <a href="#services">Pompes à chaleur</a>
+                    <a href="#services">Carrelage & sols</a>
+                    <a href="#services">Cloisons sèches</a>
+                    <a href="#services">Peinture</a>
                 </div>
-
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <div class="footer-links">
-                        <a href="tel:+33650034777"><strong>06 50 03 47 77</strong></a>
-                        <a href="tel:+33635130299">06 35 13 02 99</a>
-                        <a href="mailto:performancehabitat29@gmail.com">performancehabitat29@gmail.com</a>
-                        <div class="text-clair" style="margin-top: 0.5rem;">
-                            Lieu-dit Penfeld<br>29820 GUILERS
-                        </div>
-                    </div>
+                    <p><strong>06 50 03 47 77</strong></p>
+                    <p>06 35 13 02 99</p>
+                    <p>performancehabitat29@gmail.com</p>
+                    <p>Lieu-dit Penfeld - 29820 GUILERS</p>
                 </div>
-
                 <div class="footer-section">
-                    <h4>Informations</h4>
-                    <div class="footer-links">
-                        <a href="#apropos">À propos</a>
-                        <a href="#realisations">Réalisations</a>
-                        <a href="#temoignages">Avis clients</a>
-                        <a href="#zone">Zone d'intervention</a>
-                        <a href="#contact">Contact</a>
-                    </div>
+                    <h4>Informations légales</h4>
+                    <p>N° SIRET: 79376856500012</p>
+                    <p>Capital social : 12 500€</p>
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p class="text-clair">&copy; 2024 Performance Habitat. Tous droits réservés. | N° SIRET: 79376856500012 | Capital social : 12 500€</p>
+                <p>&copy; 2024 Performance Habitat. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Boutons flottants -->
-    <a href="#contact" class="floating-cta" title="Demander un devis gratuit" aria-label="Contact rapide">
-        📞
-    </a>
-
-    <a href="https://www.instagram.com/performancehabitat29/" target="_blank" rel="noopener" class="floating-instagram" title="Suivez-nous sur Instagram" aria-label="Instagram">
+    <!-- Bouton flottant Instagram -->
+    <a href="https://www.instagram.com/performancehabitat29/" target="_blank" class="floating-instagram" title="Suivez-nous sur Instagram">
         📷
     </a>
 
     <script>
-        // ===== GESTION DU MENU MOBILE =====
+        // ===== SLIDER HERO =====
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-item');
+        const totalSlides = slides.length;
+
+        // Créer les dots
+        function initSliderDots() {
+            const controlsContainer = document.getElementById('sliderControls');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                controlsContainer.appendChild(dot);
+            }
+        }
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            document.querySelectorAll('.slider-dot').forEach(dot => dot.classList.remove('active'));
+
+            slides[n].classList.add('active');
+            document.querySelectorAll('.slider-dot')[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance slider
+        setInterval(nextSlide, 5000);
+        initSliderDots();
+
+        // ===== MENU MOBILE =====
         function toggleMenu() {
             const navMenu = document.getElementById('navMenu');
             navMenu.classList.toggle('active');
         }
 
         // Fermer le menu au clic sur un lien
-        document.querySelectorAll('.nav-link').forEach(link => {
+        document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navMenu').classList.remove('active');
             });
         });
 
-        // ===== SCROLL SMOOTH =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // ===== FORMULAIRE =====
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous recontacterons rapidement pour votre devis gratuit.');
+            this.reset();
         });
 
-        // ===== ANIMATION DES STATISTIQUES =====
+        // ===== ANIMATION STATISTIQUES =====
         const observerOptions = {
             threshold: 0.5,
             rootMargin: '0px 0px -100px 0px'
@@ -1545,13 +1975,12 @@
                 if (entry.isIntersecting) {
                     const stats = entry.target.querySelectorAll('.stat-number');
                     stats.forEach(stat => {
-                        const originalText = stat.textContent;
-                        const hasPlus = originalText.includes('+');
-                        const hasPercent = originalText.includes('%');
-                        const target = parseInt(originalText);
+                        const text = stat.textContent;
+                        const hasPlus = text.includes('+');
+                        const hasPercent = text.includes('%');
+                        const target = parseInt(text);
                         let current = 0;
                         const increment = target / 50;
-
                         const timer = setInterval(() => {
                             current += increment;
                             if (current >= target) {
@@ -1572,63 +2001,37 @@
             observer.observe(aboutSection);
         }
 
-        // ===== GESTION DU FORMULAIRE =====
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Simulation d'envoi
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-
-            submitBtn.textContent = 'Envoi en cours...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                alert('✅ Merci pour votre message ! Nous vous recontacterons dans les plus brefs délais pour votre devis gratuit.');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
 
-        // ===== EFFET HEADER AU SCROLL =====
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 31, 46, 0.98)';
-                header.style.backdropFilter = 'blur(15px)';
-            } else {
-                header.style.background = 'rgba(26, 31, 46, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            }
-        });
-
-        // ===== FILTRES GALERIE =====
+        // ===== GALERIE: FILTRES =====
         const filterBtns = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Retirer la classe active de tous les boutons
+                // Retirer la classe active
                 filterBtns.forEach(b => b.classList.remove('active'));
-                // Ajouter la classe active au bouton cliqué
                 btn.classList.add('active');
 
                 const filter = btn.getAttribute('data-filter');
 
                 galleryItems.forEach(item => {
                     if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 50);
+                        item.classList.remove('hidden');
                     } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
+                        item.classList.add('hidden');
                     }
                 });
             });
@@ -1636,22 +2039,22 @@
 
         // ===== LIGHTBOX =====
         let currentLightboxIndex = 0;
-        const galleryPhotos = Array.from(document.querySelectorAll('.gallery-item'));
+        const galleryPhotos = document.querySelectorAll('.gallery-item:not(.hidden)');
 
         function openLightbox(index) {
             currentLightboxIndex = index;
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
-
-            const visibleItems = galleryPhotos.filter(item =>
-                item.style.display !== 'none' &&
-                item.style.opacity !== '0'
-            );
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const allItems = Array.from(document.querySelectorAll('.gallery-item'));
+            const visibleItems = allItems.filter(item => !item.classList.contains('hidden'));
 
             if (visibleItems[index]) {
                 const img = visibleItems[index].querySelector('.gallery-img');
+                const title = visibleItems[index].querySelector('.gallery-info h4');
+
                 lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
+                lightboxCaption.textContent = title ? title.textContent : '';
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
@@ -1663,25 +2066,9 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Navigation lightbox avec clavier
-        document.addEventListener('keydown', (e) => {
-            const lightbox = document.getElementById('lightbox');
-            if (!lightbox.classList.contains('active')) return;
-
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                navigateLightbox(-1);
-            } else if (e.key === 'ArrowRight') {
-                navigateLightbox(1);
-            }
-        });
-
-        function navigateLightbox(direction) {
-            const visibleItems = galleryPhotos.filter(item =>
-                item.style.display !== 'none' &&
-                item.style.opacity !== '0'
-            );
+        function changeLightbox(direction) {
+            const allItems = Array.from(document.querySelectorAll('.gallery-item'));
+            const visibleItems = allItems.filter(item => !item.classList.contains('hidden'));
 
             currentLightboxIndex += direction;
 
@@ -1692,9 +2079,22 @@
             }
 
             const img = visibleItems[currentLightboxIndex].querySelector('.gallery-img');
+            const title = visibleItems[currentLightboxIndex].querySelector('.gallery-info h4');
+
             document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox-img').alt = img.alt;
+            document.getElementById('lightbox-caption').textContent = title ? title.textContent : '';
         }
+
+        // Fermer lightbox avec Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                changeLightbox(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeLightbox(1);
+            }
+        });
 
         // Fermer lightbox en cliquant à l'extérieur
         document.getElementById('lightbox')?.addEventListener('click', (e) => {
@@ -1702,41 +2102,6 @@
                 closeLightbox();
             }
         });
-
-        // ===== ANIMATION AU SCROLL =====
-        const fadeElements = document.querySelectorAll('.service-card, .realisation-card, .temoignage-card');
-
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        fadeElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            fadeObserver.observe(el);
-        });
-
-        // ===== COMPTEUR DE VISITES SIMULÉ =====
-        window.addEventListener('load', () => {
-            const visitCount = localStorage.getItem('visitCount') || 0;
-            localStorage.setItem('visitCount', parseInt(visitCount) + 1);
-        });
-
-        // ===== GESTION DES ERREURS IMAGES =====
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMmQzNDQ3Ii8+CjxwYXRoIGQ9Ik0xMjAgMTIwSDE4MFYxODBIMTIwVjEyMFoiIGZpbGw9IiNjNGZmMGUiLz4KPHRleHQgeD0iMjAwIiB5PSIxNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2M0ZmYwZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UGVyZm9ybWFuY2UgSGFiaXRhdDwvdGV4dD4KPC9zdmc+';
-                this.alt = 'Image non disponible';
-            });
-        });
-
-        console.log('🚀 Performance Habitat - Site chargé avec succès');
     </script>
 </body>
 </html>
