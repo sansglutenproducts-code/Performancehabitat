@@ -10,6 +10,331 @@
     <title>Performance Habitat - Ensemble, assurons votre confort</title>
 
     <style>
+        /* IMAGE BADGE */
+
+        /* REALISATION CARD */
+.realisation-card {
+    background: #34495e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.realisation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(196, 255, 14, 0.2);
+}
+
+.realisation-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #2c3e50;
+    position: relative;
+}
+
+.realisation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.realisation-card:hover .realisation-image img {
+    transform: scale(1.08);
+}
+
+.realisation-content {
+    padding: 2rem;
+}
+
+.realisation-content h3 {
+    color: var(--vert-fluo);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.realisation-content p {
+    color: var(--gris-clair);
+    line-height: 1.6;
+}
+
+/* IMAGE BADGE */
+.image-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--vert-fluo);
+    color: var(--gris-fonce);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.realisation-card:hover .image-badge {
+    opacity: 1;
+    transform: translateY(0);
+}
+.image-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--vert-fluo);
+    color: var(--gris-fonce);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.realisation-card:hover .image-badge {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.realisation-image {
+    position: relative;
+}
+
+/* MODAL GALERIE */
+.modal-gallery {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-gallery.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-gallery-content {
+    width: 95%;
+    max-width: 1000px;
+    background: #1a252f;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(196, 255, 14, 0.3);
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--vert-fluo);
+}
+
+.modal-title {
+    color: var(--blanc);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.modal-title span {
+    color: var(--vert-fluo);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--vert-fluo);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+.carousel-main {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #2c3e50;
+    overflow: hidden;
+}
+
+.carousel-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: fadeInImage 0.4s ease;
+}
+
+@keyframes fadeInImage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.carousel-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--vert-fluo);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    background: rgba(196, 255, 14, 0.2);
+    border: 2px solid var(--vert-fluo);
+    color: var(--vert-fluo);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.carousel-btn:hover {
+    background: var(--vert-fluo);
+    color: var(--gris-fonce);
+    transform: scale(1.15);
+}
+
+.thumbnails-section {
+    background: #2c3e50;
+    padding: 1.5rem;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.thumbnails-title {
+    color: var(--gris-clair);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.thumbnails-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.08);
+}
+
+.thumbnail.active {
+    border-color: var(--vert-fluo);
+    box-shadow: 0 0 15px rgba(196, 255, 14, 0.5);
+}
+
+.modal-footer {
+    background: #1a252f;
+    padding: 2rem;
+    text-align: center;
+    color: var(--gris-clair);
+}
+
+.modal-footer p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .carousel-main {
+        height: 350px;
+    }
+
+    .thumbnails-section {
+        max-height: 120px;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}
         * {
             margin: 0;
             padding: 0;
@@ -1577,33 +1902,25 @@
             <p class="section-subtitle">Découvrez quelques-uns de nos projets récents dans la région brestoise</p>
             <div class="realisation-grid">
                 {% for projet in projects %}
-                <div class="realisation-card">
-                    {% if projet.image %}
-                    <div class="realisation-image">
-                        <img src="{{ projet.image.url }}" alt="{{ projet.titre }}" class="projects-img">
-                    </div>
-                    {% endif %}
-                    <div class="realisation-content">
-                        <h3>{{ projet.titre }}</h3>
-                        <p>{{ projet.description|safe|truncatewords_html:30 }}</p>
-
-                        <!-- Badges pour les images supplémentaires -->
-                        {% if projet.images.count > 0 %}
-                        <div style="margin-top: 1rem; color: var(--vert-fluo); font-size: 0.9rem;">
-                            📷 {{ projet.images.count }} photo{{ projet.images.count|pluralize }}
-                        </div>
-                        {% endif %}
-
-                        <!-- Bouton pour voir les détails -->
-                        <a href="{% url 'project_detail' projet.slug %}"
-                           style="display: inline-block; margin-top: 1rem; background: var(--vert-fluo); color: var(--gris-fonce); padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s ease;">
-                            Voir les détails →
-                        </a>
-                    </div>
-                </div>
-                {% empty %}
-                <p style="color: var(--gris-clair); text-align: center; grid-column: 1/-1;">Nos réalisations seront bientôt disponibles.</p>
-                {% endfor %}
+<div class="realisation-card" onclick="openProjectGallery('{{ projet.id }}')">
+    {% if projet.image %}
+    <div class="realisation-image">
+        <img src="{{ projet.image.url }}" alt="{{ projet.titre }}">
+        {% if projet.images.count > 0 %}
+        <div class="image-badge">
+            📷 +{{ projet.images.count }} photos
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="realisation-content">
+        <h3>{{ projet.titre }}</h3>
+        <p>{{ projet.description|safe|truncatewords_html:30 }}</p>
+    </div>
+</div>
+{% empty %}
+<p class="empty-text">Nos réalisations seront bientôt disponibles.</p>
+{% endfor %}
             </div>
         </div>
     </section>
@@ -1906,6 +2223,104 @@
     </a>
 
     <script>
+
+        // ===== GALERIE PROJETS =====
+const projects = {
+    {% for projet in projects %}
+    '{{ projet.id }}': {
+        title: '{{ projet.titre }}',
+        images: [
+            '{{ projet.image.url }}',
+            {% for img in projet.images.all %}
+            '{{ img.image.url }}',
+            {% endfor %}
+        ]
+    },
+    {% endfor %}
+};
+
+let currentProjectId = null;
+let currentImageIndex = 0;
+
+function openProjectGallery(projectId) {
+    currentProjectId = projectId;
+    currentImageIndex = 0;
+
+    const project = projects[projectId];
+    if (!project) return;
+
+    document.getElementById('projectTitle').textContent = project.title;
+
+    const thumbnailsGrid = document.getElementById('thumbnailsGrid');
+    thumbnailsGrid.innerHTML = '';
+
+    project.images.forEach((img, index) => {
+        const thumb = document.createElement('div');
+        thumb.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+        thumb.innerHTML = `<img src="${img}" alt="Photo ${index + 1}">`;
+        thumb.onclick = () => goToImage(index);
+        thumbnailsGrid.appendChild(thumb);
+    });
+
+    displayImage(0);
+    document.getElementById('totalImages').textContent = project.images.length;
+    document.getElementById('projectGalleryModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProjectGallery() {
+    document.getElementById('projectGalleryModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function displayImage(index) {
+    const project = projects[currentProjectId];
+    if (!project) return;
+
+    const mainImg = document.getElementById('mainImage');
+    mainImg.src = project.images[index];
+    document.getElementById('currentIndex').textContent = index + 1;
+
+    document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+    });
+
+    currentImageIndex = index;
+}
+
+function nextImage() {
+    const project = projects[currentProjectId];
+    if (!project) return;
+    currentImageIndex = (currentImageIndex + 1) % project.images.length;
+    displayImage(currentImageIndex);
+}
+
+function prevImage() {
+    const project = projects[currentProjectId];
+    if (!project) return;
+    currentImageIndex = (currentImageIndex - 1 + project.images.length) % project.images.length;
+    displayImage(currentImageIndex);
+}
+
+function goToImage(index) {
+    displayImage(index);
+}
+
+// Navigation clavier
+document.addEventListener('keydown', (e) => {
+    if (document.getElementById('projectGalleryModal').classList.contains('active')) {
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeProjectGallery();
+    }
+});
+
+// Fermer en cliquant hors du modal
+document.getElementById('projectGalleryModal').addEventListener('click', (e) => {
+    if (e.target.id === 'projectGalleryModal') {
+        closeProjectGallery();
+    }
+});
         // ===== SLIDER HERO =====
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slider-item');
@@ -2108,5 +2523,42 @@
             }
         });
     </script>
+<!-- MODAL GALERIE PROJET -->
+<div id="projectGalleryModal" class="modal-gallery">
+    <div class="modal-gallery-content">
+        <!-- HEADER -->
+        <div class="modal-header">
+            <div>
+                <div class="modal-title">
+                    Galerie <span id="projectTitle">du Projet</span>
+                </div>
+            </div>
+            <button class="modal-close" onclick="closeProjectGallery()">&times;</button>
+        </div>
+
+        <!-- CAROUSEL PRINCIPAL -->
+        <div class="carousel-main">
+            <img id="mainImage" src="" alt="Image principale">
+            <div class="carousel-counter">
+                <span id="currentIndex">1</span> / <span id="totalImages">0</span>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevImage()">❮</button>
+                <button class="carousel-btn" onclick="nextImage()">❯</button>
+            </div>
+        </div>
+
+        <!-- THUMBNAILS -->
+        <div class="thumbnails-section">
+            <div class="thumbnails-title">Toutes les photos du projet</div>
+            <div class="thumbnails-grid" id="thumbnailsGrid"></div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="modal-footer">
+            <p>Cliquez sur une vignette pour afficher l'image. Utilisez les flèches ou votre clavier pour naviguer.</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
